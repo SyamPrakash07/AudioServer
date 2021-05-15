@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choice</title>
+
+</head>
+<style>
+    .CHOICE{
+    border: 2px outset red;
+    background-color:lightblue;
+    text-align:center;
+    breadth:10px;
+    font-size : 20px;
+</style>
+
+<body>
+<script>
+    function myFunc()
+    {
+        var type = document.getElementsByName("Audiotype");
+        if(type[0].checked)
+        {
+            location.href='index.html';
+
+        }
+
+
+        if(type[1].checked)
+        {
+            location.href='Podcast';
+
+        }
+          if(type[2].checked)
+        {
+            location.href='Audiobook';
+
+        }
+
+    }
+
+</script>
+<div class="CHOICE" aria-dropeffect="popup">
+<form method="post">{% csrf_token %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <input type="radio" id="Song" name="Audiotype" value="Song" onclick="myFunc();">Song
+    <input type="radio" id="Podcast" name="Audiotype" value="Podcast" onclick="myFunc();">Podcast
+    <input type="radio" id="AudioBook" name="Audiotype" value="AudioBook" onclick="myFunc();">AudioBook
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</form>
+</div>
+</body>
+</html>
